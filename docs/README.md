@@ -46,8 +46,8 @@ flowchart LR
 ### 1. Clone & Setup Env
 
 ```bash
-git clone https://github.com/your-org/bharasena.git
-cd bharasena
+git clone https://github.com/codeplyapp/Bharasena.git
+cd Bharasena
 cp .env.example .env
 # Isi semua variabel di .env
 ```
