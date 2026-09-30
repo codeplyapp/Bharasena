@@ -238,16 +238,16 @@ block-beta
     columns 5
     H1["ID"] H2["Kebutuhan"] H3["Fitur"] H4["Prioritas"] H5["Status"]
 
-    R1["FR-01"] R2["Tampilkan info acara"] R3["Section Tentang + Hero"] R4["P1"] R5["To Do"]
-    R6["FR-02"] R7["Tampilkan rundown"] R8["Tab Rundown 3 hari"] R9["P1"] R10["To Do"]
-    R11["FR-03"] R12["Tampilkan guest star"] R13["Section Guest Star"] R14["P1"] R15["To Do"]
-    R16["FR-04"] R17["Proposal untuk sponsor"] R18["Section Proposal + PDF"] R19["P1"] R20["To Do"]
-    R21["FR-05"] R22["Kontak CP via WA"] R23["Section Kontak Humas"] R24["P1"] R25["To Do"]
-    R26["FR-06"] R27["Galeri dokumentasi"] R28["Section Momen + Cloudinary"] R29["P1"] R30["To Do"]
-    R31["FR-07"] R32["Admin kelola konten"] R33["Panel /admin + CRUD"] R34["P1"] R35["To Do"]
-    R36["FR-08"] R37["Mode otomatis pre/event"] R38["mode.ts server-side"] R39["P1"] R40["To Do"]
-    R41["NFR-01"] R42["Performa cepat"] R43["SSR + next/image"] R44["P2"] R45["To Do"]
-    R46["NFR-02"] R47["Aman dari akses tidak sah"] R48["Cookie HttpOnly + middleware"] R49["P1"] R50["To Do"]
+    R1["FR-01"] R2["Tampilkan info acara"] R3["Section Tentang + Hero"] R4["P1"] R5["Done (UI)"]
+    R6["FR-02"] R7["Tampilkan rundown"] R8["Tab Rundown 3 hari"] R9["P1"] R10["Done (UI)"]
+    R11["FR-03"] R12["Tampilkan guest star"] R13["Section Guest Star"] R14["P1"] R15["Done (UI)"]
+    R16["FR-04"] R17["Proposal untuk sponsor"] R18["Section Proposal + PDF"] R19["P1"] R20["Done (UI)"]
+    R21["FR-05"] R22["Kontak CP via WA"] R23["Section Kontak Humas"] R24["P1"] R25["Done (UI)"]
+    R26["FR-06"] R27["Galeri dokumentasi"] R28["Section Momen + Cloudinary"] R29["P1"] R30["Done (UI)"]
+    R31["FR-07"] R32["Admin kelola konten"] R33["Panel /admin + CRUD"] R34["P1"] R35["In Progress (UI Done)"]
+    R36["FR-08"] R37["Mode otomatis pre/event"] R38["mode.ts server-side"] R39["P1"] R40["Done (Server-side & UI)"]
+    R41["NFR-01"] R42["Performa cepat"] R43["SSR + next/image"] R44["P2"] R45["Done"]
+    R46["NFR-02"] R47["Aman dari akses tidak sah"] R48["Cookie HttpOnly + middleware"] R49["P1"] R50["To Do (Backend)"]
 ```
 
 ---
