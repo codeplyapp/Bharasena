@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EventMode } from "@/lib/types";
 import { getNavItems } from "@/lib/sections";
-import { Calendar, MapPin, MessageCircle, ArrowRight } from "lucide-react";
+import { X, Calendar, MapPin, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
 
 interface NavbarProps {
   mode: EventMode;
@@ -40,6 +40,23 @@ export function Navbar({ mode }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navItems]);
 
+  // Close menu on ESC key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    if (mobileMenuOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
+
   const handleNavClick = () => {
     setMobileMenuOpen(false);
   };
@@ -47,7 +64,7 @@ export function Navbar({ mode }: NavbarProps) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? "bg-charcoal-950/85 backdrop-blur-md border-b border-white/5 py-4 shadow-xl shadow-black/40"
             : "bg-gradient-to-b from-black/85 via-black/45 to-transparent py-5 sm:py-6"
@@ -106,7 +123,7 @@ export function Navbar({ mode }: NavbarProps) {
             <div className="flex items-center flex-shrink-0">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="flex flex-col items-end justify-center gap-1.5 p-2 text-stone-200 hover:text-white focus:outline-none cursor-pointer group"
+                className="flex flex-col items-end justify-center gap-1.5 p-2 text-stone-200 hover:text-gold-400 focus:outline-none cursor-pointer group"
                 aria-expanded={mobileMenuOpen}
                 aria-label={mobileMenuOpen ? "Tutup Menu Navigasi" : "Buka Menu Navigasi"}
               >
@@ -131,60 +148,116 @@ export function Navbar({ mode }: NavbarProps) {
         </div>
       </header>
 
-      {/* Fullscreen / Drawer Glassmorphic Navigation Menu */}
+      {/* Luxury Slide-over Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-charcoal-950/95 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 pt-28 sm:pt-32 animate-in fade-in zoom-in-95 duration-200">
-          <div className="max-w-4xl mx-auto w-full flex-1 flex flex-col justify-center">
-            
-            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-400 mb-6 sm:mb-8">
-              Navigasi Halaman · BHARASENA
-            </p>
+        <div className="fixed inset-0 z-50 flex justify-end animate-in fade-in duration-200">
+          
+          {/* Dark Backdrop */}
+          <div
+            onClick={() => setMobileMenuOpen(false)}
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+            aria-hidden="true"
+          />
 
-            <nav className="flex flex-col space-y-4 sm:space-y-6">
-              {navItems.map((item, idx) => {
-                const isActive = activeSection === item.id;
-                return (
-                  <a
-                    key={item.id}
-                    href={item.href}
-                    onClick={handleNavClick}
-                    className="group flex items-center justify-between text-2xl sm:text-4xl md:text-5xl font-cinzel font-bold text-stone-200 hover:text-gold-400 transition-colors tracking-wide py-1 border-b border-stone-800/50"
-                  >
-                    <div className="flex items-center gap-4">
-                      <span className="text-xs sm:text-sm font-sans text-stone-600 group-hover:text-gold-500 transition-colors">
-                        0{idx + 1}
-                      </span>
-                      <span className={isActive ? "text-gold-400" : ""}>{item.label}</span>
-                    </div>
-                    <ArrowRight className="w-5 h-5 sm:w-7 sm:h-7 opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold-400" />
-                  </a>
-                );
-              })}
-            </nav>
-          </div>
+          {/* Slide-over Right Panel */}
+          <aside
+            className="relative z-10 w-full sm:w-[480px] md:w-[500px] h-full bg-charcoal-950 border-l border-gold-500/20 shadow-2xl flex flex-col justify-between p-6 sm:p-8 md:p-10 overflow-y-auto animate-in slide-in-from-right duration-300"
+            aria-label="Panel Navigasi"
+          >
+            {/* Top Brand Bar & Close Button */}
+            <div>
+              <div className="flex items-center justify-between pb-6 mb-6 border-b border-stone-800/80">
+                <div className="flex items-center gap-3">
+                  <div className="relative w-8 h-8 flex-shrink-0">
+                    <Image
+                      src="/logo.webp"
+                      alt="Logo BHARASENA"
+                      width={32}
+                      height={34}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <span className="font-cinzel font-bold text-base tracking-[0.16em] text-white block uppercase">
+                      BHARASENA<span className="text-gold-400">.</span>
+                    </span>
+                    <span className="text-[11px] text-stone-400 font-sans block">
+                      Prom Night Taruna Bhayangkara 6
+                    </span>
+                  </div>
+                </div>
 
-          {/* Drawer Bottom Info */}
-          <div className="max-w-4xl mx-auto w-full pt-8 border-t border-stone-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-stone-400">
-            <div className="flex flex-wrap items-center gap-6">
-              <span className="flex items-center gap-2">
-                <Calendar className="w-3.5 h-3.5 text-gold-500" />
-                11–13 Desember 2026
-              </span>
-              <span className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-gold-500" />
-                SMAN 2 Taruna Bhayangkara
-              </span>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-9 h-9 rounded-full bg-charcoal-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-white hover:border-gold-500/40 transition-colors focus:outline-none cursor-pointer"
+                  aria-label="Tutup Menu"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <div className="space-y-1">
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/90 mb-3 px-3">
+                  Menu Halaman
+                </p>
+
+                <nav className="flex flex-col space-y-1">
+                  {navItems.map((item, idx) => {
+                    const isActive = activeSection === item.id;
+                    return (
+                      <a
+                        key={item.id}
+                        href={item.href}
+                        onClick={handleNavClick}
+                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm sm:text-base font-semibold transition-all ${
+                          isActive
+                            ? "bg-gold-500/15 text-gold-300 border border-gold-500/30 shadow-sm"
+                            : "text-stone-300 hover:text-white hover:bg-charcoal-900/80 border border-transparent"
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="text-xs font-mono text-stone-500 group-hover:text-gold-400/80 w-5">
+                            0{idx + 1}
+                          </span>
+                          <span className="tracking-wide">{item.label}</span>
+                        </div>
+
+                        <div className="flex items-center gap-1.5">
+                          {isActive && <Sparkles className="w-3.5 h-3.5 text-gold-400" />}
+                          <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold-400" />
+                        </div>
+                      </a>
+                    );
+                  })}
+                </nav>
+              </div>
             </div>
 
-            <a
-              href="#kontak"
-              onClick={handleNavClick}
-              className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 font-semibold uppercase tracking-wider"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>Hubungi Panitia</span>
-            </a>
-          </div>
+            {/* Bottom Card & CTA */}
+            <div className="pt-6 mt-6 border-t border-stone-800/80 space-y-4">
+              <div className="p-4 rounded-xl bg-charcoal-900/90 border border-stone-800/80 text-xs text-stone-300 space-y-2">
+                <div className="flex items-center gap-2 text-stone-300">
+                  <Calendar className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+                  <span>11–13 Desember 2026</span>
+                </div>
+                <div className="flex items-center gap-2 text-stone-300">
+                  <MapPin className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+                  <span>SMAN 2 Taruna Bhayangkara</span>
+                </div>
+              </div>
+
+              <a
+                href="#kontak"
+                onClick={handleNavClick}
+                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-charcoal-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-gold-500/20 transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Hubungi Panitia Acara</span>
+              </a>
+            </div>
+          </aside>
+
         </div>
       )}
     </>
