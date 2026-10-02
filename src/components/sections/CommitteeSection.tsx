@@ -1,6 +1,5 @@
 import React from "react";
 import { CommitteeSection as CommitteeSectionType } from "@/lib/types";
-import { User, ShieldCheck } from "lucide-react";
 import { EmptyState } from "./shared/EmptyState";
 
 interface CommitteeSectionProps {
@@ -45,10 +44,7 @@ export function CommitteeSection({ sections }: CommitteeSectionProps) {
                   className="p-6 sm:p-8 rounded-3xl bg-charcoal-850/70 border border-stone-800 shadow-lg backdrop-blur-sm"
                 >
                   {/* Division Header */}
-                  <div className="flex items-center gap-3 pb-4 mb-6 border-b border-stone-800">
-                    <div className="w-10 h-10 rounded-xl bg-charcoal-800 border border-gold-400/20 flex items-center justify-center text-gold-400">
-                      <ShieldCheck className="w-5 h-5" />
-                    </div>
+                  <div className="pb-4 mb-6 border-b border-stone-800 flex items-center justify-between">
                     <div>
                       <h3 className="font-display text-xl sm:text-2xl font-bold text-gold-400">
                         {section.title}
@@ -66,18 +62,13 @@ export function CommitteeSection({ sections }: CommitteeSectionProps) {
                         key={member.id}
                         className="p-4 rounded-xl bg-charcoal-800/80 border border-stone-800 hover:border-gold-400/30 hover:bg-charcoal-800 transition-all duration-200"
                       >
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-charcoal-900 border border-stone-700 flex items-center justify-center text-stone-400 flex-shrink-0">
-                            <User className="w-4 h-4" />
-                          </div>
-                          <div className="overflow-hidden">
-                            <h4 className="font-medium text-stone-100 text-sm truncate">
-                              {member.name}
-                            </h4>
-                            <p className="text-stone-400 text-xs truncate">
-                              {member.role}
-                            </p>
-                          </div>
+                        <div className="overflow-hidden">
+                          <h4 className="font-medium text-stone-100 text-sm truncate">
+                            {member.name}
+                          </h4>
+                          <p className="text-stone-400 text-xs truncate mt-0.5">
+                            {member.role}
+                          </p>
                         </div>
                       </div>
                     ))}

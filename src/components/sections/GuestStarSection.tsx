@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { GuestStar } from "@/lib/types";
-import { Star, Sparkles } from "lucide-react";
 import { EmptyState } from "./shared/EmptyState";
 import { SHIMMER_BLUR_DATA_URL } from "@/lib/images";
 
@@ -55,19 +54,13 @@ export function GuestStarSection({ guests }: GuestStarSectionProps) {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
-                  
-                  {/* Floating Star Badge */}
-                  <div className="absolute top-4 right-4 p-2 rounded-full bg-charcoal-900/80 backdrop-blur-md border border-gold-400/30 text-gold-400 shadow-md">
-                    <Star className="w-4 h-4 fill-gold-400/40" />
-                  </div>
                 </div>
 
                 {/* Content Details */}
                 <div className="p-6 flex-1 flex flex-col justify-end relative bg-charcoal-800">
-                  <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-crimson-400 uppercase tracking-wider mb-2">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>{guest.role}</span>
-                  </div>
+                  <span className="text-xs font-semibold text-crimson-400 uppercase tracking-wider mb-2 block">
+                    {guest.role}
+                  </span>
                   <h3 className="font-display text-2xl font-bold text-stone-100 group-hover:text-gold-400 transition-colors">
                     {guest.name}
                   </h3>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Proposal, SponsorshipTier } from "@/lib/types";
-import { FileText, Download, ExternalLink, Check, Sparkles, Gem } from "lucide-react";
+import { Download, ExternalLink, Check, Sparkles } from "lucide-react";
 import { Button } from "../ui/button";
 import { EmptyState } from "./shared/EmptyState";
 
@@ -43,9 +43,6 @@ export function ProposalSection({
                 className="p-6 sm:p-8 rounded-3xl bg-charcoal-800/90 border border-stone-800 hover:border-gold-400/40 transition-all duration-300 flex flex-col justify-between shadow-xl group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-charcoal-900 border border-stone-700 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 group-hover:border-gold-400/40 transition-transform">
-                    <FileText className="w-6 h-6" />
-                  </div>
                   <h3 className="font-display text-xl font-bold text-stone-100 mb-3 group-hover:text-gold-400 transition-colors">
                     {proposal.title}
                   </h3>
@@ -75,10 +72,9 @@ export function ProposalSection({
         {tiers.length > 0 && (
           <div className="mt-16">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-crimson-400 mb-2">
-                <Gem className="w-4 h-4" />
-                <span>Pilihan Paket Sponsorship</span>
-              </div>
+              <span className="text-xs font-bold uppercase tracking-wider text-crimson-400 mb-2 block">
+                Pilihan Paket Sponsorship
+              </span>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-stone-100">
                 Tingkatan Kemitraan Brand
               </h3>

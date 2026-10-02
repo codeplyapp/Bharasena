@@ -1,31 +1,23 @@
 import React from "react";
 import { OfficialGuest } from "@/lib/types";
-import { Award, UserCheck, Shield, Sparkles } from "lucide-react";
 import { EmptyState } from "./shared/EmptyState";
 
 interface GuestsSectionProps {
   guests: OfficialGuest[];
 }
 
-const CATEGORY_META: Record<
-  string,
-  { label: string; icon: React.ElementType }
-> = {
+const CATEGORY_META: Record<string, { label: string }> = {
   kepala: {
     label: "Kepala Satuan Pendidikan",
-    icon: Award,
   },
   wakil: {
     label: "Wakil Kepala Satuan Pendidikan",
-    icon: UserCheck,
   },
   pembina: {
     label: "Pembina & Instruktur Taruna",
-    icon: Shield,
   },
   lainnya: {
     label: "Tamu Kehormatan",
-    icon: Sparkles,
   },
 };
 
@@ -71,20 +63,14 @@ export function GuestsSection({ guests }: GuestsSectionProps) {
             {activeCategories.map((catKey) => {
               const meta = CATEGORY_META[catKey] ?? {
                 label: "Tamu Undangan",
-                icon: UserCheck,
-                badgeColor: "border-stone-700 bg-charcoal-900 text-stone-300",
               };
-              const IconComponent = meta.icon;
               const catGuests = groupedGuests[catKey] ?? [];
 
               return (
                 <div key={catKey} className="space-y-6">
                   {/* Category Header */}
-                  <div className="flex items-center gap-3 border-b border-stone-800 pb-3">
-                    <div className="w-8 h-8 rounded-lg bg-charcoal-800 flex items-center justify-center text-gold-400">
-                      <IconComponent className="w-4 h-4" />
-                    </div>
-                    <h3 className="font-display text-xl sm:text-2xl font-bold text-stone-200">
+                  <div className="border-b border-stone-800 pb-3">
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-gold-400">
                       {meta.label}
                     </h3>
                   </div>
