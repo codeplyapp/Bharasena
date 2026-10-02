@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { DocumentationPhoto } from "@/lib/types";
-import { Camera, ZoomIn } from "lucide-react";
+import { ZoomIn } from "lucide-react";
 import { DayTabs } from "./shared/DayTabs";
 import { EmptyState } from "./shared/EmptyState";
 import { GalleryLightbox } from "./shared/GalleryLightbox";
@@ -41,10 +41,6 @@ export function GallerySection({
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-crimson-600/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Camera className="w-3.5 h-3.5" />
-            <span>Dokumentasi Resmi</span>
-          </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-stone-100 tracking-tight mb-4">
             Galeri <span className="text-gold-400">Momen Acara</span>
           </h2>

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { RundownItem } from "@/lib/types";
-import { Clock, Calendar } from "lucide-react";
+import { Clock } from "lucide-react";
 import { DayTabs } from "./shared/DayTabs";
 import { EmptyState } from "./shared/EmptyState";
 
@@ -35,10 +35,6 @@ export function RundownSection({
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Calendar className="w-3.5 h-3.5" />
-            <span>Jadwal Pelaksanaan</span>
-          </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-stone-100 tracking-tight mb-4">
             Rundown Acara <span className="text-gold-400">3 Hari</span>
           </h2>

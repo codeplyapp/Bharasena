@@ -1,6 +1,6 @@
 import React from "react";
 import { ContactPerson } from "@/lib/types";
-import { MessageCircle, Phone, Building2, Store } from "lucide-react";
+import { MessageCircle, Building2, Store } from "lucide-react";
 import { Button } from "../ui/button";
 import { EmptyState } from "./shared/EmptyState";
 
@@ -53,10 +53,6 @@ export function ContactSection({ contacts }: ContactSectionProps) {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-crimson-600/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Phone className="w-3.5 h-3.5" />
-            <span>Narahubung Resmi</span>
-          </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-stone-100 tracking-tight mb-4">
             Hubungi <span className="text-gold-400">Panitia</span>
           </h2>

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { GuestStar } from "@/lib/types";
-import { Mic2, Star, Sparkles } from "lucide-react";
+import { Star, Sparkles } from "lucide-react";
 import { EmptyState } from "./shared/EmptyState";
 import { SHIMMER_BLUR_DATA_URL } from "@/lib/images";
 
@@ -21,10 +21,6 @@ export function GuestStarSection({ guests }: GuestStarSectionProps) {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-crimson-600/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Mic2 className="w-3.5 h-3.5" />
-            <span>Penampil Spesial</span>
-          </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-stone-100 tracking-tight mb-4">
             Bintang Tamu & <span className="text-gold-400">Guest Stars</span>
           </h2>

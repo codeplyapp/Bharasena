@@ -1,6 +1,6 @@
 import React from "react";
 import { Proposal, SponsorshipTier } from "@/lib/types";
-import { FileText, Download, ExternalLink, Check, Sparkles, Gem, Handshake } from "lucide-react";
+import { FileText, Download, ExternalLink, Check, Sparkles, Gem } from "lucide-react";
 import { Button } from "../ui/button";
 import { EmptyState } from "./shared/EmptyState";
 
@@ -21,10 +21,6 @@ export function ProposalSection({
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Handshake className="w-3.5 h-3.5" />
-            <span>Kemitraan & Sponsorship</span>
-          </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-stone-100 tracking-tight mb-4">
             Proposal & Paket <span className="text-gold-400">Kerjasama</span>
           </h2>

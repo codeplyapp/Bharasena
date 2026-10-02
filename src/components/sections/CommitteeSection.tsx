@@ -1,6 +1,6 @@
 import React from "react";
 import { CommitteeSection as CommitteeSectionType } from "@/lib/types";
-import { Users, User, ShieldCheck } from "lucide-react";
+import { User, ShieldCheck } from "lucide-react";
 import { EmptyState } from "./shared/EmptyState";
 
 interface CommitteeSectionProps {
@@ -18,10 +18,6 @@ export function CommitteeSection({ sections }: CommitteeSectionProps) {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-crimson-600/15 border border-crimson-500/30 text-crimson-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Users className="w-3.5 h-3.5" />
-            <span>Struktur Organisasi</span>
-          </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-stone-100 tracking-tight mb-4">
             Susunan <span className="text-gold-400">Kepanitiaan</span>
           </h2>

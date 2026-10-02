@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { HeroProps } from "@/lib/types";
-import { Calendar, MapPin, ChevronDown, Sparkles, FileText, Camera } from "lucide-react";
+import { Calendar, MapPin, ChevronDown, FileText, Camera } from "lucide-react";
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
 
 export function Hero({
   eventName,
@@ -28,23 +27,6 @@ export function Hero({
       </div>
 
       <div className="max-w-5xl mx-auto text-center flex flex-col items-center relative z-10">
-        {/* Squadron Identity Eyebrow */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
-          <Badge
-            variant="gold"
-            className="px-4 py-1.5 text-xs sm:text-sm font-semibold tracking-wider uppercase border border-gold-400/40"
-          >
-            <Sparkles className="w-3.5 h-3.5 mr-1.5 text-gold-400" />
-            Prom Night Taruna Bhayangkara 6
-          </Badge>
-          <Badge
-            variant="secondary"
-            className="px-3.5 py-1.5 text-xs text-stone-300 border-stone-700"
-          >
-            SMAN 2 Taruna Bhayangkara
-          </Badge>
-        </div>
-
         {/* Big Official Crest Logo */}
         <div className="relative w-28 h-28 sm:w-36 sm:h-36 mb-6 drop-shadow-[0_0_35px_rgba(255,203,86,0.35)] transition-transform duration-500 hover:scale-105">
           <Image
