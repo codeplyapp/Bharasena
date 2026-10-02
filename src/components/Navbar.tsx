@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EventMode } from "@/lib/types";
 import { getNavItems } from "@/lib/sections";
-import { Menu, X, Sparkles, MessageCircle } from "lucide-react";
-import { Button } from "./ui/button";
+import { Calendar, MapPin, MessageCircle, ArrowRight } from "lucide-react";
 
 interface NavbarProps {
   mode: EventMode;
@@ -29,7 +28,7 @@ export function Navbar({ mode }: NavbarProps) {
         const el = document.getElementById(sectionId);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 120) {
+          if (rect.top <= 140) {
             setActiveSection(sectionId);
             break;
           }
@@ -46,122 +45,150 @@ export function Navbar({ mode }: NavbarProps) {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? "bg-charcoal-900/90 backdrop-blur-md border-b border-stone-800/80 py-3 shadow-lg shadow-black/20"
-          : "bg-gradient-to-b from-charcoal-950/90 to-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Brand Logo & Name */}
-          <Link
-            href="#hero"
-            className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 rounded-lg p-1"
-          >
-            <div className="relative w-9 h-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/logo.webp"
-                alt="Logo BHARASENA"
-                width={48}
-                height={50}
-                className="object-contain"
-                priority
-              />
-            </div>
-            <span className="font-cinzel font-semibold text-lg sm:text-xl tracking-[0.14em] text-gold-400 group-hover:text-gold-300 transition-colors pr-1.5 overflow-visible">
-              BHARASENA
-            </span>
-          </Link>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-charcoal-950/85 backdrop-blur-md border-b border-white/5 py-4 shadow-xl shadow-black/40"
+            : "bg-gradient-to-b from-black/85 via-black/45 to-transparent py-5 sm:py-6"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="flex items-center justify-between">
+            
+            {/* 1. Brand / Logo */}
+            <Link
+              href="#hero"
+              className="flex items-center gap-3 group focus-visible:outline-none"
+            >
+              <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/logo.webp"
+                  alt="Logo BHARASENA"
+                  width={38}
+                  height={40}
+                  className="object-contain drop-shadow-[0_0_12px_rgba(217,119,6,0.35)]"
+                  priority
+                />
+              </div>
+              <span className="font-cinzel font-bold text-lg sm:text-xl tracking-[0.18em] text-white group-hover:text-gold-400 transition-colors uppercase">
+                BHARASENA<span className="text-gold-400">.</span>
+              </span>
+            </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav
-            className="hidden lg:flex items-center gap-1 xl:gap-2 px-3 py-1.5 rounded-full bg-charcoal-850/60 border border-stone-800/60 backdrop-blur-sm"
-            aria-label="Navigasi Utama"
-          >
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <a
-                  key={item.id}
-                  href={item.href}
-                  className={`px-3 py-1.5 rounded-full text-xs xl:text-sm font-medium transition-all duration-200 ${
-                    isActive
-                      ? "bg-crimson-600/90 text-white font-semibold shadow-sm"
-                      : "text-stone-300 hover:text-gold-400 hover:bg-charcoal-800/60"
+            {/* 2. Desktop Navigation Links (Clean Minimalist Editorial Style) */}
+            <div className="flex items-center gap-6 lg:gap-10">
+              <nav
+                className="hidden md:flex items-center gap-6 lg:gap-9"
+                aria-label="Navigasi Utama"
+              >
+                {navItems.map((item) => {
+                  const isActive = activeSection === item.id;
+                  return (
+                    <a
+                      key={item.id}
+                      href={item.href}
+                      className={`relative text-[11px] lg:text-xs font-semibold tracking-[0.22em] uppercase transition-all duration-200 py-1 ${
+                        isActive
+                          ? "text-white font-bold drop-shadow-[0_0_12px_rgba(255,255,255,0.45)]"
+                          : "text-stone-300/90 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      {isActive && (
+                        <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-gold-400 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.9)]" />
+                      )}
+                    </a>
+                  );
+                })}
+              </nav>
+
+              {/* 3. Minimalist 2-line Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="flex flex-col items-end justify-center gap-1.5 p-2 text-stone-200 hover:text-white focus:outline-none cursor-pointer group"
+                aria-expanded={mobileMenuOpen}
+                aria-label={mobileMenuOpen ? "Tutup Menu Navigasi" : "Buka Menu Navigasi"}
+              >
+                <span
+                  className={`h-[2px] bg-current transition-all duration-300 rounded-full ${
+                    mobileMenuOpen
+                      ? "w-6 rotate-45 translate-y-[7px] bg-gold-400"
+                      : "w-6 group-hover:bg-gold-400"
                   }`}
-                >
-                  {item.label}
-                </a>
-              );
-            })}
-          </nav>
+                />
+                <span
+                  className={`h-[2px] bg-current transition-all duration-300 rounded-full ${
+                    mobileMenuOpen
+                      ? "w-6 -rotate-45 -translate-y-[1px] bg-gold-400"
+                      : "w-4 group-hover:w-6 group-hover:bg-gold-400"
+                  }`}
+                />
+              </button>
+            </div>
 
-          {/* Action CTA & Mobile Hamburger */}
-          <div className="flex items-center gap-3">
-            <Button
-              asChild
-              size="sm"
-              variant="default"
-              className="hidden sm:inline-flex"
-            >
-              <a href="#kontak">
-                <MessageCircle className="w-4 h-4 mr-1.5" />
-                <span>Hubungi Panitia</span>
-              </a>
-            </Button>
-
-            {/* Mobile Hamburger Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl bg-charcoal-800 text-stone-200 hover:text-gold-400 hover:bg-charcoal-700 border border-stone-700/60 focus:outline-none focus:ring-2 focus:ring-gold-400 cursor-pointer"
-              aria-expanded={mobileMenuOpen}
-              aria-label="Buka Menu Navigasi"
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Drawer Menu */}
+      {/* Fullscreen / Drawer Glassmorphic Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-charcoal-900/98 backdrop-blur-xl border-b border-stone-800 shadow-2xl px-6 py-6 transition-all duration-200 animate-in slide-in-from-top-4">
-          <nav className="flex flex-col space-y-1">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <a
-                  key={item.id}
-                  href={item.href}
-                  onClick={() => handleNavClick()}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors ${
-                    isActive
-                      ? "bg-crimson-600 text-white font-semibold"
-                      : "text-stone-300 hover:bg-charcoal-800 hover:text-gold-400"
-                  }`}
-                >
-                  <span>{item.label}</span>
-                  {isActive && <Sparkles className="w-4 h-4 text-gold-400" />}
-                </a>
-              );
-            })}
-            <div className="pt-4 mt-2 border-t border-stone-800">
-              <Button asChild className="w-full justify-center" size="lg">
-                <a href="#kontak" onClick={() => setMobileMenuOpen(false)}>
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Hubungi Panitia Acara
-                </a>
-              </Button>
+        <div className="fixed inset-0 z-40 bg-charcoal-950/95 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-12 pt-28 sm:pt-32 animate-in fade-in zoom-in-95 duration-200">
+          <div className="max-w-4xl mx-auto w-full flex-1 flex flex-col justify-center">
+            
+            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-400 mb-6 sm:mb-8">
+              Navigasi Halaman · BHARASENA
+            </p>
+
+            <nav className="flex flex-col space-y-4 sm:space-y-6">
+              {navItems.map((item, idx) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <a
+                    key={item.id}
+                    href={item.href}
+                    onClick={handleNavClick}
+                    className="group flex items-center justify-between text-2xl sm:text-4xl md:text-5xl font-cinzel font-bold text-stone-200 hover:text-gold-400 transition-colors tracking-wide py-1 border-b border-stone-800/50"
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className="text-xs sm:text-sm font-sans text-stone-600 group-hover:text-gold-500 transition-colors">
+                        0{idx + 1}
+                      </span>
+                      <span className={isActive ? "text-gold-400" : ""}>{item.label}</span>
+                    </div>
+                    <ArrowRight className="w-5 h-5 sm:w-7 sm:h-7 opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold-400" />
+                  </a>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* Drawer Bottom Info */}
+          <div className="max-w-4xl mx-auto w-full pt-8 border-t border-stone-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-stone-400">
+            <div className="flex flex-wrap items-center gap-6">
+              <span className="flex items-center gap-2">
+                <Calendar className="w-3.5 h-3.5 text-gold-500" />
+                11–13 Desember 2026
+              </span>
+              <span className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-gold-500" />
+                SMAN 2 Taruna Bhayangkara
+              </span>
             </div>
-          </nav>
+
+            <a
+              href="#kontak"
+              onClick={handleNavClick}
+              className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 font-semibold uppercase tracking-wider"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>Hubungi Panitia</span>
+            </a>
+          </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
+
+export default Navbar;
