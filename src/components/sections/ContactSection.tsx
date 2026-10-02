@@ -14,7 +14,6 @@ const CATEGORY_MAP = {
     desc: "Pertanyaan seputar tiket, jadwal, tata tertib, dan informasi umum kegiatan.",
     icon: MessageCircle,
     color: "text-gold-400",
-    badge: "border-gold-400/30 bg-gold-400/10 text-gold-400",
     defaultText:
       "Halo Panitia BHARASENA 2026, saya ingin bertanya seputar informasi acara Prom Night.",
   },
@@ -23,7 +22,6 @@ const CATEGORY_MAP = {
     desc: "Kerjasama korporasi, presentasi paket sponsor, dan penawaran media partner.",
     icon: Building2,
     color: "text-crimson-400",
-    badge: "border-crimson-500/30 bg-crimson-600/10 text-crimson-400",
     defaultText:
       "Halo Tim Sponsorship BHARASENA 2026, saya berminat untuk berdiskusi terkait kemitraan / sponsorship.",
   },
@@ -32,7 +30,6 @@ const CATEGORY_MAP = {
     desc: "Pendaftaran booth bazar kuliner, produk kreatif, dan tenant selama acara.",
     icon: Store,
     color: "text-stone-300",
-    badge: "border-stone-600 bg-charcoal-900 text-stone-300",
     defaultText:
       "Halo Tim Bazar BHARASENA 2026, saya tertarik membuka booth / stand UMKM pada acara ini.",
   },
@@ -80,15 +77,8 @@ export function ContactSection({ contacts }: ContactSectionProps) {
                   className="p-6 sm:p-8 rounded-3xl bg-charcoal-850/80 border border-stone-800 flex flex-col justify-between shadow-lg backdrop-blur-sm"
                 >
                   <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-charcoal-900 border border-stone-700 flex items-center justify-center text-gold-400">
-                        <IconComponent className="w-5 h-5" />
-                      </div>
-                      <span
-                        className={`text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full border ${meta.badge}`}
-                      >
-                        {catKey.toUpperCase()}
-                      </span>
+                    <div className="w-10 h-10 rounded-xl bg-charcoal-900 border border-stone-700 flex items-center justify-center text-gold-400 mb-4">
+                      <IconComponent className="w-5 h-5" />
                     </div>
 
                     <h3 className="font-display text-xl font-bold text-stone-100 mb-2">

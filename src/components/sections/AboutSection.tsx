@@ -12,28 +12,24 @@ export function AboutSection({ about }: AboutSectionProps) {
       title: "Tujuan Acara",
       icon: Target,
       content: about.tujuan,
-      badge: "Visi & Kehormatan",
       accentBorder: "hover:border-gold-400/50",
     },
     {
       title: "Harapan Bersama",
       icon: Compass,
       content: about.harapan,
-      badge: "Masa Depan",
       accentBorder: "hover:border-crimson-500/50",
     },
     {
       title: "Arti Nama Bhara Arsa Nawasena",
       icon: BookOpen,
       content: about.artiNama,
-      badge: "Identitas Batalyon",
       accentBorder: "hover:border-gold-400/50",
     },
     {
       title: "Filosofi Lambang & Logo",
       icon: ShieldCheck,
       content: about.filosofiLogo,
-      badge: "Makna Lambang",
       accentBorder: "hover:border-crimson-500/50",
     },
   ];
@@ -63,13 +59,8 @@ export function AboutSection({ about }: AboutSectionProps) {
                 key={idx}
                 className={`group relative p-6 sm:p-8 rounded-3xl bg-charcoal-800/90 border border-stone-800 transition-all duration-300 hover:bg-charcoal-800 hover:shadow-xl hover:shadow-black/40 ${item.accentBorder}`}
               >
-                <div className="flex items-start justify-between gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-charcoal-900 border border-stone-700/80 flex items-center justify-center text-gold-400 group-hover:scale-110 group-hover:border-gold-400/40 transition-transform">
-                    <IconComponent className="w-6 h-6" />
-                  </div>
-                  <span className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-charcoal-900/80 text-stone-400 border border-stone-800">
-                    {item.badge}
-                  </span>
+                <div className="w-12 h-12 rounded-2xl bg-charcoal-900 border border-stone-700/80 flex items-center justify-center text-gold-400 group-hover:scale-110 group-hover:border-gold-400/40 transition-transform mb-6">
+                  <IconComponent className="w-6 h-6" />
                 </div>
 
                 <h3 className="font-display text-xl sm:text-2xl font-bold text-gold-400 mb-3 group-hover:text-gold-300 transition-colors">

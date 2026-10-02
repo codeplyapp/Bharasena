@@ -9,27 +9,23 @@ interface GuestsSectionProps {
 
 const CATEGORY_META: Record<
   string,
-  { label: string; icon: React.ElementType; badgeColor: string }
+  { label: string; icon: React.ElementType }
 > = {
   kepala: {
     label: "Kepala Satuan Pendidikan",
     icon: Award,
-    badgeColor: "border-gold-400/40 bg-gold-400/15 text-gold-400",
   },
   wakil: {
     label: "Wakil Kepala Satuan Pendidikan",
     icon: UserCheck,
-    badgeColor: "border-crimson-500/40 bg-crimson-600/15 text-crimson-400",
   },
   pembina: {
     label: "Pembina & Instruktur Taruna",
     icon: Shield,
-    badgeColor: "border-stone-600 bg-charcoal-900 text-stone-300",
   },
   lainnya: {
     label: "Tamu Kehormatan",
     icon: Sparkles,
-    badgeColor: "border-stone-700 bg-charcoal-900 text-stone-400",
   },
 };
 
@@ -101,11 +97,6 @@ export function GuestsSection({ guests }: GuestsSectionProps) {
                         className="p-6 rounded-2xl bg-charcoal-800/90 border border-stone-800 hover:border-gold-400/40 hover:bg-charcoal-800 transition-all duration-200 shadow-md flex flex-col justify-between"
                       >
                         <div>
-                          <span
-                            className={`inline-block text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full border mb-3 ${meta.badgeColor}`}
-                          >
-                            {guest.category}
-                          </span>
                           <h4 className="font-display text-lg sm:text-xl font-bold text-stone-100 mb-1.5 leading-snug">
                             {guest.name}
                           </h4>
