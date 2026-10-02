@@ -373,14 +373,6 @@ export function Footer() {
               <span>&copy; {currentYear} BHARASENA — SMAN 2 Taruna Bhayangkara. Hak Cipta Dilindungi.</span>
             </div>
 
-            {/* "Crafted with Love" Badge */}
-            <div className="footer-glass-pill px-5 py-2 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-gold-500/20">
-              <span className="text-stone-400 text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Dibuat dengan</span>
-              <span className="animate-footer-heartbeat text-sm text-red-500">❤</span>
-              <span className="text-stone-400 text-[10px] sm:text-xs font-semibold uppercase tracking-wider">oleh</span>
-              <span className="text-gold-400 font-bold text-xs sm:text-sm tracking-normal">Panitia Batalyon 6</span>
-            </div>
-
             {/* Back to top */}
             <MagneticButton
               as="button"
