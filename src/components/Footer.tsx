@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUp, Shield } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Register ScrollTrigger safely for React / Next.js
@@ -128,7 +128,7 @@ const STYLES = `
 // -------------------------------------------------------------------------
 // MAGNETIC BUTTON PRIMITIVE
 // -------------------------------------------------------------------------
-export type MagneticButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & 
+export type MagneticButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.AnchorHTMLAttributes<HTMLAnchorElement> & {
     as?: React.ElementType;
   };
@@ -278,7 +278,7 @@ export function Footer() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
-      
+
       {/* 
         The "Curtain Reveal" Wrapper:
         Sits in standard flow. With clip-path polygon, contents are revealed
@@ -291,7 +291,7 @@ export function Footer() {
       >
         {/* Fixed footer background underneath */}
         <footer className="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden bg-charcoal-950 text-stone-100 cinematic-footer-wrapper">
-          
+
           {/* Ambient Gold Aura & Grid */}
           <div className="footer-aurora absolute left-1/2 top-1/2 h-[65vh] w-[85vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[100px] pointer-events-none z-0" />
           <div className="footer-bg-grid absolute inset-0 z-0 pointer-events-none opacity-60" />
@@ -314,7 +314,7 @@ export function Footer() {
 
           {/* 2. Main Center Content */}
           <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 sm:px-6 mt-20 sm:mt-24 w-full max-w-5xl mx-auto">
-            
+
             {/* Logo Badge */}
             <div className="relative w-14 h-14 sm:w-16 sm:h-16 mb-4 flex-shrink-0">
               <Image
@@ -344,7 +344,7 @@ export function Footer() {
                 <MagneticButton as="a" href="#hero" className="footer-glass-pill px-6 sm:px-8 py-3 rounded-full text-stone-200 hover:text-gold-300 font-semibold text-xs sm:text-sm flex items-center gap-2">
                   <span>Beranda</span>
                 </MagneticButton>
-                
+
                 <MagneticButton as="a" href="#tentang" className="footer-glass-pill px-6 sm:px-8 py-3 rounded-full text-stone-200 hover:text-gold-300 font-semibold text-xs sm:text-sm flex items-center gap-2">
                   <span>Tentang Acara</span>
                 </MagneticButton>
@@ -366,11 +366,10 @@ export function Footer() {
 
           {/* 3. Bottom Bar / Credits */}
           <div className="relative z-20 w-full pb-6 sm:pb-8 px-6 sm:px-12 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 border-t border-stone-800/60 bg-charcoal-950/70 backdrop-blur-sm pt-4">
-            
+
             {/* Copyright */}
-            <div className="text-stone-400 text-[11px] sm:text-xs font-medium tracking-wider order-2 md:order-1 text-center md:text-left flex items-center gap-2">
-              <Shield className="w-3.5 h-3.5 text-gold-500 flex-shrink-0" />
-              <span>&copy; {currentYear} BHARASENA — SMAN 2 Taruna Bhayangkara. Hak Cipta Dilindungi.</span>
+            <div className="text-stone-400 text-[11px] sm:text-xs font-medium tracking-wider order-2 md:order-1 text-center md:text-left">
+              <span>&copy; {currentYear} BHARASENA — SMAN 2 Taruna Bhayangkara. All Rights Reserved.</span>
             </div>
 
             {/* Back to top */}
