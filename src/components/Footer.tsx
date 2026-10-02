@@ -23,7 +23,7 @@ export function Footer() {
                 />
               </div>
               <div>
-                <span className="font-cinzel font-bold text-xl text-gold-400 block leading-tight tracking-wider pr-2 overflow-visible">
+                <span className="font-cinzel font-semibold text-xl text-gold-400 block leading-tight tracking-[0.15em] pr-2 overflow-visible">
                   BHARASENA
                 </span>
                 <span className="text-xs text-stone-400 font-medium">

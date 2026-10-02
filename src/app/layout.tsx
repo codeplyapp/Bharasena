@@ -22,7 +22,7 @@ const inter = Inter({
 
 const cinzel = Cinzel_Decorative({
   subsets: ["latin"],
-  weight: ["700", "900"],
+  weight: ["400", "700", "900"],
   variable: "--font-cinzel",
   display: "swap",
 });
