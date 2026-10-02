@@ -48,7 +48,7 @@ export default async function HomePage() {
       <Navbar mode={mode} />
 
       {/* Main Content Sections (Server Components) */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10 bg-charcoal-900 shadow-2xl">
         <Hero
           eventName={hero.eventName}
           dateRange={hero.dateRange}
