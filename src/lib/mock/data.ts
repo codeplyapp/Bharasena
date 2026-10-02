@@ -16,7 +16,7 @@ import {
  */
 
 export const mockHero: HeroProps = {
-  eventName: "BHARASENA 2026",
+  eventName: "BHARASENA",
   dateRange: "11–13 Desember 2026",
   venue: "[GANTI] Gedung Graha Bhayangkara, Banyuwangi",
   tagline: "Merajut Asa, Mengukir Jejak Kesatria Taruna Menuju Puncak Gemilang",
