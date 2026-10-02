@@ -70,14 +70,9 @@ export function Navbar({ mode }: NavbarProps) {
                 priority
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-cinzel font-semibold text-lg sm:text-xl tracking-[0.14em] text-gold-400 group-hover:text-gold-300 transition-colors pr-1.5 overflow-visible">
-                BHARASENA
-              </span>
-              <span className="text-[10px] tracking-widest uppercase text-stone-400 font-medium">
-                Taruna Bhayangkara 6
-              </span>
-            </div>
+            <span className="font-cinzel font-semibold text-lg sm:text-xl tracking-[0.14em] text-gold-400 group-hover:text-gold-300 transition-colors pr-1.5 overflow-visible">
+              BHARASENA
+            </span>
           </Link>
 
           {/* Desktop Navigation Links */}
