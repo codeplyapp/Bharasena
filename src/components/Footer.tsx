@@ -122,6 +122,7 @@ const STYLES = `
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter: drop-shadow(0px 0px 24px rgba(245, 158, 11, 0.35));
+  overflow: visible;
 }
 `;
 
@@ -208,7 +209,7 @@ MagneticButton.displayName = "MagneticButton";
 const MarqueeItem = () => (
   <div className="flex items-center space-x-10 px-6 select-none font-medium">
     <span className="text-stone-300">BHARA ARSA NAWASENA</span> <span className="text-gold-400 text-base">✦</span>
-    <span className="text-stone-300">MALAM KEAKRABAN BATALYON 6</span> <span className="text-gold-500 text-base">✦</span>
+    <span className="text-stone-300">PROM NIGHT TARUNA BHAYANGKARA 6</span> <span className="text-gold-500 text-base">✦</span>
     <span className="text-stone-300">SMAN 2 TARUNA BHAYANGKARA</span> <span className="text-gold-400 text-base">✦</span>
     <span className="text-stone-300">11–13 DESEMBER 2026</span> <span className="text-gold-500 text-base">✦</span>
     <span className="text-stone-300">MENUJU GERBANG KESATRIA</span> <span className="text-gold-400 text-base">✦</span>
@@ -328,13 +329,13 @@ export function Footer() {
 
             <h2
               ref={headingRef}
-              className="text-4xl sm:text-6xl md:text-7xl font-cinzel font-bold footer-text-glow tracking-wide mb-4 text-center max-w-4xl"
+              className="font-cinzel text-4xl sm:text-6xl md:text-7xl font-bold tracking-[0.15em] sm:tracking-[0.2em] footer-text-glow leading-normal sm:leading-relaxed px-4 sm:px-8 py-2 sm:py-4 mb-2 text-center max-w-4xl overflow-visible inline-block"
             >
               BHARASENA
             </h2>
 
             <p className="text-xs sm:text-sm md:text-base text-stone-300 text-center max-w-xl mb-8 sm:mb-10 font-sans leading-relaxed">
-              Malam Keakraban & Pelepasan Batalyon 6 · SMAN 2 Taruna Bhayangkara. Merajut kenangan, melangkah pasti menuju masa depan gemilang.
+              Malam Keakraban Taruna Bhayangkara · SMAN 2 Taruna Bhayangkara. Merajut kenangan, melangkah pasti menuju masa depan gemilang.
             </p>
 
             {/* Interactive Magnetic Navigation Pills */}
