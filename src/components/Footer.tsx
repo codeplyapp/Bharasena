@@ -2,11 +2,10 @@
 
 import * as React from "react";
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Lock, ArrowUp, Shield } from "lucide-react";
+import { ArrowUp, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Register ScrollTrigger safely for React / Next.js
@@ -360,14 +359,6 @@ export function Footer() {
 
                 <MagneticButton as="a" href="#kontak" className="footer-glass-pill px-6 sm:px-8 py-3 rounded-full text-stone-200 hover:text-gold-300 font-semibold text-xs sm:text-sm flex items-center gap-2">
                   <span>Kontak Panitia</span>
-                </MagneticButton>
-              </div>
-
-              {/* Secondary Link: Admin Portal */}
-              <div className="flex flex-wrap justify-center gap-3 w-full mt-1">
-                <MagneticButton as={Link} href="/admin" className="footer-glass-pill px-5 py-2.5 rounded-full text-stone-400 hover:text-gold-400 font-medium text-xs flex items-center gap-2 border-stone-800/80">
-                  <Lock className="w-3.5 h-3.5 text-gold-500" />
-                  <span>Portal Admin Panitia</span>
                 </MagneticButton>
               </div>
             </div>
