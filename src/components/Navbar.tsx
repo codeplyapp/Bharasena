@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EventMode } from "@/lib/types";
 import { getNavItems } from "@/lib/sections";
-import { X, Calendar, MapPin, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import { X, Calendar, MapPin, MessageCircle, ArrowRight } from "lucide-react";
 
 interface NavbarProps {
   mode: EventMode;
@@ -224,7 +224,6 @@ export function Navbar({ mode }: NavbarProps) {
                         </div>
 
                         <div className="flex items-center gap-1.5">
-                          {isActive && <Sparkles className="w-3.5 h-3.5 text-gold-400" />}
                           <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold-400" />
                         </div>
                       </a>

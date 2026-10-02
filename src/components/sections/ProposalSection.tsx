@@ -1,6 +1,6 @@
 import React from "react";
 import { Proposal, SponsorshipTier } from "@/lib/types";
-import { Download, ExternalLink, Check, Sparkles } from "lucide-react";
+import { Download, ExternalLink, Check } from "lucide-react";
 import { Button } from "../ui/button";
 import { EmptyState } from "./shared/EmptyState";
 
@@ -91,8 +91,7 @@ export function ProposalSection({
                   }`}
                 >
                   {tier.highlight && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gold-400 text-charcoal-950 font-bold text-[10px] tracking-wider uppercase shadow-md flex items-center gap-1">
-                      <Sparkles className="w-3 h-3" />
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gold-400 text-charcoal-950 font-bold text-[10px] tracking-wider uppercase shadow-md">
                       Paling Populer
                     </div>
                   )}
