@@ -53,13 +53,13 @@ export function Navbar({ mode }: NavbarProps) {
             : "bg-gradient-to-b from-black/85 via-black/45 to-transparent py-5 sm:py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="flex items-center justify-between">
+        <div className="w-full px-6 sm:px-10 lg:px-12 xl:px-16 2xl:px-20">
+          <div className="flex items-center justify-between w-full">
             
-            {/* 1. Brand / Logo */}
+            {/* 1. Far Left: Brand / Logo */}
             <Link
               href="#hero"
-              className="flex items-center gap-3 group focus-visible:outline-none"
+              className="flex items-center gap-3 group focus-visible:outline-none flex-shrink-0"
             >
               <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
                 <Image
@@ -76,34 +76,34 @@ export function Navbar({ mode }: NavbarProps) {
               </span>
             </Link>
 
-            {/* 2. Desktop Navigation Links (Clean Minimalist Editorial Style) */}
-            <div className="flex items-center gap-6 lg:gap-10">
-              <nav
-                className="hidden md:flex items-center gap-6 lg:gap-9"
-                aria-label="Navigasi Utama"
-              >
-                {navItems.map((item) => {
-                  const isActive = activeSection === item.id;
-                  return (
-                    <a
-                      key={item.id}
-                      href={item.href}
-                      className={`relative text-[11px] lg:text-xs font-semibold tracking-[0.22em] uppercase transition-all duration-200 py-1 ${
-                        isActive
-                          ? "text-white font-bold drop-shadow-[0_0_12px_rgba(255,255,255,0.45)]"
-                          : "text-stone-300/90 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
-                      }`}
-                    >
-                      <span>{item.label}</span>
-                      {isActive && (
-                        <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-gold-400 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.9)]" />
-                      )}
-                    </a>
-                  );
-                })}
-              </nav>
+            {/* 2. Middle / Right: Navigation Links (Spread across available width) */}
+            <nav
+              className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-11 justify-end flex-1 mx-8 xl:mx-12"
+              aria-label="Navigasi Utama"
+            >
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <a
+                    key={item.id}
+                    href={item.href}
+                    className={`relative text-[11px] xl:text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-200 py-1 whitespace-nowrap ${
+                      isActive
+                        ? "text-white font-bold drop-shadow-[0_0_12px_rgba(255,255,255,0.45)]"
+                        : "text-stone-300/90 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    {isActive && (
+                      <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-gold-400 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.9)]" />
+                    )}
+                  </a>
+                );
+              })}
+            </nav>
 
-              {/* 3. Minimalist 2-line Menu Button */}
+            {/* 3. Far Right: Minimalist 2-line Menu Button */}
+            <div className="flex items-center flex-shrink-0">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="flex flex-col items-end justify-center gap-1.5 p-2 text-stone-200 hover:text-white focus:outline-none cursor-pointer group"
