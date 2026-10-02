@@ -71,7 +71,7 @@ export function Navbar({ mode }: NavbarProps) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-cinzel font-bold text-lg sm:text-xl tracking-wider text-gold-400 group-hover:text-gold-300 transition-colors">
+              <span className="font-cinzel font-bold text-lg sm:text-xl tracking-wider text-gold-400 group-hover:text-gold-300 transition-colors pr-1.5 overflow-visible">
                 BHARASENA
               </span>
               <span className="text-[10px] tracking-widest uppercase text-stone-400 font-medium">
