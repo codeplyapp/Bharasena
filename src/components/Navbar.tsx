@@ -198,11 +198,11 @@ export function Navbar({ mode }: NavbarProps) {
 
               {/* Navigation Links */}
               <div className="space-y-1">
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/90 mb-3 px-3">
+                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-gold-400/90 mb-3 px-2">
                   Menu Halaman
                 </p>
 
-                <nav className="flex flex-col space-y-1">
+                <nav className="flex flex-col divide-y divide-stone-800/40">
                   {navItems.map((item, idx) => {
                     const isActive = activeSection === item.id;
                     return (
@@ -210,22 +210,22 @@ export function Navbar({ mode }: NavbarProps) {
                         key={item.id}
                         href={item.href}
                         onClick={handleNavClick}
-                        className={`group flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm sm:text-base font-semibold transition-all ${
+                        className={`group flex items-center justify-between py-3 px-2 transition-colors ${
                           isActive
-                            ? "bg-gold-500/15 text-gold-300 border border-gold-500/30 shadow-sm"
-                            : "text-stone-300 hover:text-white hover:bg-charcoal-900/80 border border-transparent"
+                            ? "text-gold-400 font-bold"
+                            : "text-stone-300 hover:text-white"
                         }`}
                       >
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3.5">
                           <span className="text-xs font-mono text-stone-500 group-hover:text-gold-400/80 w-5">
                             0{idx + 1}
                           </span>
-                          <span className="tracking-wide">{item.label}</span>
+                          <span className="text-sm sm:text-base tracking-[0.06em] font-medium group-hover:translate-x-1 transition-transform">
+                            {item.label}
+                          </span>
                         </div>
 
-                        <div className="flex items-center gap-1.5">
-                          <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold-400" />
-                        </div>
+                        <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-gold-400" />
                       </a>
                     );
                   })}
@@ -233,14 +233,14 @@ export function Navbar({ mode }: NavbarProps) {
               </div>
             </div>
 
-            {/* Bottom Card & CTA */}
-            <div className="pt-6 mt-6 border-t border-stone-800/80 space-y-4">
-              <div className="p-4 rounded-xl bg-charcoal-900/90 border border-stone-800/80 text-xs text-stone-300 space-y-2">
-                <div className="flex items-center gap-2 text-stone-300">
+            {/* Bottom Info & CTA */}
+            <div className="pt-6 mt-6 border-t border-stone-800/80 space-y-5">
+              <div className="space-y-2 text-xs text-stone-400 px-2">
+                <div className="flex items-center gap-2.5">
                   <Calendar className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
                   <span>11–13 Desember 2026</span>
                 </div>
-                <div className="flex items-center gap-2 text-stone-300">
+                <div className="flex items-center gap-2.5">
                   <MapPin className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
                   <span>SMAN 2 Taruna Bhayangkara</span>
                 </div>
@@ -249,7 +249,7 @@ export function Navbar({ mode }: NavbarProps) {
               <a
                 href="#kontak"
                 onClick={handleNavClick}
-                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-charcoal-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-gold-500/20 transition-all"
+                className="w-full py-3 px-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-charcoal-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-md"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Hubungi Panitia Acara</span>
