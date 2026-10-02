@@ -64,7 +64,7 @@ export function AdminLoginForm() {
           />
         </div>
         <h1 className="font-display text-2xl font-bold text-stone-100">
-          Admin Portal <span className="text-gold-400">BHARASENA</span>
+          Admin Portal <span className="font-cinzel text-gold-400 tracking-wide">BHARASENA</span>
         </h1>
         <p className="text-xs text-stone-400 mt-1">
           Prom Night Taruna Bhayangkara 6 · 2026

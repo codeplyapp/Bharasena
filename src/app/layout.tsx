@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Caveat, Inter } from "next/font/google";
+import { Playfair_Display, Caveat, Inter, Cinzel_Decorative } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -17,6 +17,13 @@ const caveat = Caveat({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const cinzel = Cinzel_Decorative({
+  subsets: ["latin"],
+  weight: ["700", "900"],
+  variable: "--font-cinzel",
   display: "swap",
 });
 
@@ -56,7 +63,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`dark scroll-smooth ${playfair.variable} ${caveat.variable} ${inter.variable}`}
+      className={`dark scroll-smooth ${playfair.variable} ${caveat.variable} ${inter.variable} ${cinzel.variable}`}
     >
       <body className="min-h-screen bg-charcoal-900 text-stone-100 font-sans antialiased selection:bg-gold-400 selection:text-charcoal-900">
         {children}

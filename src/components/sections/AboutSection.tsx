@@ -47,7 +47,7 @@ export function AboutSection({ about }: AboutSectionProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-stone-100 tracking-tight mb-4">
-            Tentang <span className="text-gold-400">BHARASENA 2026</span>
+            Tentang <span className="font-cinzel text-gold-400 tracking-wide">BHARASENA 2026</span>
           </h2>
           <p className="text-stone-400 text-base sm:text-lg leading-relaxed">
             Perjalanan tiga tahun menempuh gemblengan disiplin, integritas, dan kebersamaan taruna bermuara pada malam keagungan pelepasan.

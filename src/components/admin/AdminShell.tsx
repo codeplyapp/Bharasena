@@ -66,7 +66,7 @@ export function AdminShell({
             />
           </div>
           <div>
-            <span className="font-display font-bold text-base sm:text-lg text-gold-400 block leading-tight">
+            <span className="font-cinzel font-bold text-base sm:text-lg text-gold-400 block leading-tight tracking-wide">
               Admin Panel BHARASENA
             </span>
             <span className="text-[10px] text-stone-400 font-medium">

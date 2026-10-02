@@ -15,7 +15,7 @@ export default async function AdminPage() {
       <div className="space-y-6">
         <div className="border-b border-stone-800 pb-4">
           <h2 className="font-display text-2xl font-bold text-stone-100">
-            Selamat Datang di Panel Admin BHARASENA
+            Selamat Datang di Panel Admin <span className="font-cinzel text-gold-400 tracking-wide">BHARASENA</span>
           </h2>
           <p className="text-stone-400 text-sm mt-1">
             Gunakan tab navigasi di sebelah kiri untuk mengelola konten informasi, susunan panitia, rundown acara, proposal sponsorship, dan galeri dokumentasi foto.

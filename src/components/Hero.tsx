@@ -40,7 +40,7 @@ export function Hero({
         </div>
 
         {/* Main Title Heading */}
-        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-200 leading-[1.1] mb-4">
+        <h1 className="font-cinzel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-200 leading-[1.1] mb-4">
           {eventName}
         </h1>
 
