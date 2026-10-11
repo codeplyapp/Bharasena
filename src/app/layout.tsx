@@ -34,7 +34,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "BHARASENA — Prom Night Taruna Bhayangkara 6",
+  title: "BHARASENA",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/logo.webp", type: "image/webp" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   description:
     "Website Resmi Prom Night BHARASENA (Batalyon Bhara Arsa Nawasena · SMAN 2 Taruna Bhayangkara), 11–13 Desember 2026. Portal informasi jadwal acara, proposal sponsorship, dan galeri dokumentasi.",
   keywords: [
@@ -47,7 +56,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Panitia BHARASENA 2026" }],
   openGraph: {
-    title: "BHARASENA — Prom Night Taruna Bhayangkara 6",
+    title: "BHARASENA",
     description:
       "Portal Resmi Prom Night Taruna Bhayangkara 6 (11–13 Desember 2026). Rundown acara, guest star, proposal sponsorship, dan galeri dokumentasi.",
     type: "website",
