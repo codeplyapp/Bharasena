@@ -1,8 +1,9 @@
 import React from "react";
 import { Proposal, SponsorshipTier } from "@/lib/types";
-import { Download, ExternalLink, Check } from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 import { Button } from "../ui/button";
 import { EmptyState } from "./shared/EmptyState";
+import { SponsorshipPricing } from "./shared/SponsorshipPricing";
 
 interface ProposalSectionProps {
   proposals: Proposal[];
@@ -68,70 +69,10 @@ export function ProposalSection({
           </div>
         )}
 
-        {/* Sponsorship Tiers Block */}
+        {/* Pilihan Paket Sponsorship Block (Interactive Animated Pricing) */}
         {tiers.length > 0 && (
           <div className="mt-16">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="text-xs font-bold uppercase tracking-wider text-crimson-400 mb-2 block">
-                Pilihan Paket Sponsorship
-              </span>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-stone-100">
-                Tingkatan Kemitraan Brand
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {tiers.map((tier) => (
-                <div
-                  key={tier.id}
-                  className={`relative p-6 rounded-3xl flex flex-col justify-between transition-all duration-300 ${
-                    tier.highlight
-                      ? "bg-charcoal-800 border-2 border-gold-400 shadow-2xl shadow-gold-400/10 scale-105 z-10"
-                      : "bg-charcoal-850/80 border border-stone-800 hover:border-stone-700"
-                  }`}
-                >
-                  {tier.highlight && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gold-400 text-charcoal-950 font-bold text-[10px] tracking-wider uppercase shadow-md">
-                      Paling Populer
-                    </div>
-                  )}
-
-                  <div>
-                    <h4 className="font-display text-xl font-bold text-stone-100 mb-2">
-                      {tier.name}
-                    </h4>
-                    <div className="font-display text-2xl font-black text-gold-400 mb-6">
-                      {tier.price}
-                    </div>
-
-                    <div className="space-y-3 pt-4 border-t border-stone-800">
-                      {tier.benefits.map((benefit, bIdx) => (
-                        <div
-                          key={bIdx}
-                          className="flex items-start gap-2.5 text-xs text-stone-300 leading-relaxed"
-                        >
-                          <div className="w-4 h-4 rounded-full bg-crimson-600/20 text-crimson-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Check className="w-3 h-3" />
-                          </div>
-                          <span>{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mt-8 pt-4">
-                    <Button
-                      asChild
-                      variant={tier.highlight ? "gold" : "outlineGold"}
-                      size="sm"
-                      className="w-full justify-center"
-                    >
-                      <a href="#kontak">Pilih Paket Ini</a>
-                    </Button>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <SponsorshipPricing tiers={tiers} />
           </div>
         )}
       </div>
