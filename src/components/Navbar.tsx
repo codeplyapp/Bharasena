@@ -19,28 +19,20 @@ export function Navbar({ mode }: NavbarProps) {
   const navItems = getNavItems(mode);
 
   useEffect(() => {
-    let ticking = false;
-
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 20);
 
-          // Simple intersection observer detection for active anchor
-          const sections = navItems.map((item) => item.id);
-          for (const sectionId of [...sections].reverse()) {
-            const el = document.getElementById(sectionId);
-            if (el) {
-              const rect = el.getBoundingClientRect();
-              if (rect.top <= 140) {
-                setActiveSection(sectionId);
-                break;
-              }
-            }
+      // Simple intersection observer detection for active anchor
+      const sections = navItems.map((item) => item.id);
+      for (const sectionId of [...sections].reverse()) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 140) {
+            setActiveSection(sectionId);
+            break;
           }
-          ticking = false;
-        });
-        ticking = true;
+        }
       }
     };
 

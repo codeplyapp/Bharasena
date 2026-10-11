@@ -3,7 +3,6 @@ import Image from "next/image";
 import { HeroProps } from "@/lib/types";
 import { Calendar, MapPin, ChevronDown, FileText, Camera } from "lucide-react";
 import { Button } from "./ui/button";
-import { FloatingPathsBackground } from "./ui/floating-paths";
 
 export function Hero({
   eventName,
@@ -25,34 +24,28 @@ export function Hero({
 
         {/* Subtle grid texture overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:24px_24px] opacity-25" />
-
-        {/* Dynamic Floating Paths SVG Currents */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none">
-          <FloatingPathsBackground position={1} className="absolute inset-0 w-full h-full opacity-75" />
-          <FloatingPathsBackground position={-1} className="absolute inset-0 w-full h-full opacity-55" />
-        </div>
       </div>
 
       <div className="max-w-5xl mx-auto text-center flex flex-col items-center relative z-10">
         {/* Big Official Crest Logo */}
-        <div className="relative mb-6 drop-shadow-[0_0_35px_rgba(255,203,86,0.4)] transition-transform duration-500 hover:scale-105 flex items-center justify-center">
+        <div className="relative w-28 h-28 sm:w-36 sm:h-36 mb-6 drop-shadow-[0_0_35px_rgba(255,203,86,0.35)] transition-transform duration-500 hover:scale-105">
           <Image
             src="/logo.webp"
             alt="Lambang Resmi BHARASENA"
-            width={144}
-            height={144}
-            className="w-28 h-28 sm:w-36 sm:h-36 object-contain"
+            fill
+            sizes="(max-width: 640px) 112px, 144px"
+            className="object-contain"
             priority
           />
         </div>
 
         {/* Main Title Heading */}
-        <h1 className="font-cinzel text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-[0.12em] sm:tracking-[0.18em] gold-heading-gradient leading-tight sm:leading-relaxed px-2 sm:px-8 py-2 mb-2 overflow-visible inline-block drop-shadow-[0_4px_24px_rgba(255,203,86,0.25)]">
+        <h1 className="font-cinzel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[0.15em] sm:tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-200 leading-normal sm:leading-relaxed px-4 sm:px-8 py-2 sm:py-4 mb-2 overflow-visible inline-block">
           {eventName}
         </h1>
 
-        {/* Handwritten Tagline with Caveat font */}
-        <p className="font-hand text-2xl sm:text-3xl md:text-4xl text-crimson-400 font-semibold max-w-3xl mb-8 leading-snug">
+        {/* Ceremonial Tagline / Motto */}
+        <p className="font-hand italic text-2xl sm:text-3xl md:text-4xl text-crimson-400 font-normal max-w-3xl mb-8 leading-snug tracking-wide">
           &ldquo;{tagline}&rdquo;
         </p>
 

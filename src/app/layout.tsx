@@ -1,22 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Caveat, Inter, Cinzel_Decorative } from "next/font/google";
+import { Cormorant_Garamond, Instrument_Serif, Plus_Jakarta_Sans, Cinzel_Decorative } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
 
-const caveat = Caveat({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-caveat",
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-motto",
   display: "swap",
 });
 
-const inter = Inter({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -35,6 +39,15 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "BHARASENA",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/logo.webp", type: "image/webp" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   description:
     "Website Resmi Prom Night BHARASENA (Batalyon Bhara Arsa Nawasena · SMAN 2 Taruna Bhayangkara), 11–13 Desember 2026. Portal informasi jadwal acara, proposal sponsorship, dan galeri dokumentasi.",
   keywords: [
@@ -63,7 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`dark scroll-smooth ${playfair.variable} ${caveat.variable} ${inter.variable} ${cinzel.variable}`}
+      className={`dark scroll-smooth ${cormorant.variable} ${instrumentSerif.variable} ${plusJakarta.variable} ${cinzel.variable}`}
     >
       <body className="min-h-screen bg-charcoal-900 text-stone-100 font-sans antialiased selection:bg-gold-400 selection:text-charcoal-900">
         {children}
