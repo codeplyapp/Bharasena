@@ -3,6 +3,7 @@ import Image from "next/image";
 import { HeroProps } from "@/lib/types";
 import { Calendar, MapPin, ChevronDown, FileText, Camera } from "lucide-react";
 import { Button } from "./ui/button";
+import { FloatingPathsBackground } from "./ui/floating-paths";
 
 export function Hero({
   eventName,
@@ -24,6 +25,10 @@ export function Hero({
 
         {/* Subtle grid texture overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:24px_24px] opacity-25" />
+
+        {/* Dynamic Floating Paths SVG Currents */}
+        <FloatingPathsBackground position={1} className="absolute inset-0 w-full h-full opacity-60" />
+        <FloatingPathsBackground position={-1} className="absolute inset-0 w-full h-full opacity-40" />
       </div>
 
       <div className="max-w-5xl mx-auto text-center flex flex-col items-center relative z-10">
