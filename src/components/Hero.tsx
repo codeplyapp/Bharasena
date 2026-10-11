@@ -27,25 +27,27 @@ export function Hero({
         <div className="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:24px_24px] opacity-25" />
 
         {/* Dynamic Floating Paths SVG Currents */}
-        <FloatingPathsBackground position={1} className="absolute inset-0 w-full h-full opacity-60" />
-        <FloatingPathsBackground position={-1} className="absolute inset-0 w-full h-full opacity-40" />
+        <div className="absolute inset-0 w-full h-full pointer-events-none">
+          <FloatingPathsBackground position={1} className="absolute inset-0 w-full h-full opacity-75" />
+          <FloatingPathsBackground position={-1} className="absolute inset-0 w-full h-full opacity-55" />
+        </div>
       </div>
 
       <div className="max-w-5xl mx-auto text-center flex flex-col items-center relative z-10">
         {/* Big Official Crest Logo */}
-        <div className="relative w-28 h-28 sm:w-36 sm:h-36 mb-6 drop-shadow-[0_0_35px_rgba(255,203,86,0.35)] transition-transform duration-500 hover:scale-105">
+        <div className="relative mb-6 drop-shadow-[0_0_35px_rgba(255,203,86,0.4)] transition-transform duration-500 hover:scale-105 flex items-center justify-center">
           <Image
             src="/logo.webp"
             alt="Lambang Resmi BHARASENA"
-            fill
-            sizes="(max-width: 640px) 112px, 144px"
-            className="object-contain"
+            width={144}
+            height={144}
+            className="w-28 h-28 sm:w-36 sm:h-36 object-contain"
             priority
           />
         </div>
 
         {/* Main Title Heading */}
-        <h1 className="font-cinzel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[0.15em] sm:tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-200 leading-normal sm:leading-relaxed px-4 sm:px-8 py-2 sm:py-4 mb-2 overflow-visible inline-block">
+        <h1 className="font-cinzel text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[0.16em] sm:tracking-[0.2em] gold-heading-gradient leading-normal sm:leading-relaxed px-4 sm:px-8 py-2 sm:py-4 mb-2 overflow-visible inline-block drop-shadow-[0_4px_24px_rgba(255,203,86,0.25)]">
           {eventName}
         </h1>
 

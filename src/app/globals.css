@@ -114,3 +114,18 @@ body {
 .crimson-glow {
   box-shadow: 0 0 25px -5px rgba(185, 54, 54, 0.35);
 }
+
+/* Ensure cross-browser text clipping for gradients */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Cross-browser gold text gradient */
+.gold-heading-gradient {
+  color: #FFCB56;
+  background-image: linear-gradient(135deg, #FFD97D 0%, #FFCB56 45%, #E5B446 80%, #C99A2C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
