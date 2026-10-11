@@ -89,7 +89,7 @@ export function Navbar({ mode }: NavbarProps) {
                 />
               </div>
               <span className="font-cinzel font-bold text-lg sm:text-xl tracking-[0.18em] text-white group-hover:text-gold-400 transition-colors uppercase">
-                BHARASENA<span className="text-gold-400">.</span>
+                BHARASENA
               </span>
             </Link>
 
@@ -177,14 +177,9 @@ export function Navbar({ mode }: NavbarProps) {
                       className="object-contain"
                     />
                   </div>
-                  <div>
-                    <span className="font-cinzel font-bold text-base tracking-[0.16em] text-white block uppercase">
-                      BHARASENA<span className="text-gold-400">.</span>
-                    </span>
-                    <span className="text-[11px] text-stone-400 font-sans block">
-                      Prom Night Taruna Bhayangkara 6
-                    </span>
-                  </div>
+                  <span className="font-cinzel font-bold text-base sm:text-lg tracking-[0.16em] text-white uppercase">
+                    BHARASENA
+                  </span>
                 </div>
 
                 <button

@@ -329,14 +329,10 @@ export function Footer() {
 
             <h2
               ref={headingRef}
-              className="font-cinzel text-4xl sm:text-6xl md:text-7xl font-bold tracking-[0.15em] sm:tracking-[0.2em] footer-text-glow leading-normal sm:leading-relaxed px-4 sm:px-8 py-2 sm:py-4 mb-2 text-center max-w-4xl overflow-visible inline-block"
+              className="font-cinzel text-4xl sm:text-6xl md:text-7xl font-bold tracking-[0.15em] sm:tracking-[0.2em] footer-text-glow leading-normal sm:leading-relaxed px-4 sm:px-8 py-2 sm:py-4 mb-6 sm:mb-8 text-center max-w-4xl overflow-visible inline-block"
             >
               BHARASENA
             </h2>
-
-            <p className="text-xs sm:text-sm md:text-base text-stone-300 text-center max-w-xl mb-8 sm:mb-10 font-sans leading-relaxed">
-              Malam Keakraban Taruna Bhayangkara · SMAN 2 Taruna Bhayangkara. Merajut kenangan, melangkah pasti menuju masa depan gemilang.
-            </p>
 
             {/* Interactive Magnetic Navigation Pills */}
             <div ref={linksRef} className="flex flex-col items-center gap-4 sm:gap-6 w-full">

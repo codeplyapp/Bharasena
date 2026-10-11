@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
@@ -301,7 +302,7 @@ export function CinematicFooter() {
             ref={giantTextRef}
             className="footer-giant-bg-text absolute -bottom-[5vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-0 pointer-events-none select-none"
           >
-            SOBERS
+            BHARASENA
           </div>
 
           {/* 1. Diagonal Sleek Marquee (Top of footer) */}
@@ -314,11 +315,22 @@ export function CinematicFooter() {
 
           {/* 2. Main Center Content */}
           <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 mt-20 w-full max-w-5xl mx-auto">
+            {/* Logo Badge */}
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 mb-4 flex-shrink-0">
+              <Image
+                src="/logo.webp"
+                alt="Logo BHARASENA"
+                width={80}
+                height={84}
+                className="object-contain drop-shadow-[0_0_24px_rgba(217,119,6,0.45)]"
+              />
+            </div>
+
             <h2
               ref={headingRef}
               className="text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-12 text-center"
             >
-              Ready to begin?
+              BHARASENA
             </h2>
 
             {/* Interactive Magnetic Pills Layout */}
@@ -360,7 +372,7 @@ export function CinematicFooter() {
             
             {/* Copyright */}
             <div className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1">
-              © 2026 Volvox. All rights reserved.
+              © 2026 BHARASENA. All rights reserved.
             </div>
 
             {/* "Made with Love" Badge */}
@@ -368,7 +380,7 @@ export function CinematicFooter() {
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">Crafted with</span>
               <span className="animate-footer-heartbeat text-sm md:text-base text-destructive">❤</span>
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
-              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">Volvox</span>
+              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">BHARASENA</span>
             </div>
 
             {/* Back to top */}
