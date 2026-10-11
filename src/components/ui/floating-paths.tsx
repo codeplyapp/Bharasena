@@ -43,11 +43,11 @@ export function FloatingPathsBackground({
               stroke="currentColor"
               strokeWidth={path.width}
               strokeOpacity={path.opacity}
-              initial={{ pathLength: 0.35, opacity: 0.4 }}
+              initial={{ pathLength: 0.45, opacity: 0.35, pathOffset: 0 }}
               animate={{
-                pathLength: 1,
+                pathLength: 0.45,
                 opacity: [0.35, 0.75, 0.35],
-                pathOffset: [0, 1, 0],
+                pathOffset: [0, 1],
               }}
               transition={{
                 duration: path.duration,

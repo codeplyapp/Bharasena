@@ -47,7 +47,7 @@ export function Hero({
         </div>
 
         {/* Main Title Heading */}
-        <h1 className="font-cinzel text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[0.16em] sm:tracking-[0.2em] gold-heading-gradient leading-normal sm:leading-relaxed px-4 sm:px-8 py-2 sm:py-4 mb-2 overflow-visible inline-block drop-shadow-[0_4px_24px_rgba(255,203,86,0.25)]">
+        <h1 className="font-cinzel text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-[0.12em] sm:tracking-[0.18em] gold-heading-gradient leading-tight sm:leading-relaxed px-2 sm:px-8 py-2 mb-2 overflow-visible inline-block drop-shadow-[0_4px_24px_rgba(255,203,86,0.25)]">
           {eventName}
         </h1>
 
