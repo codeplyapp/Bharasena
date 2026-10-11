@@ -129,3 +129,18 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Footer Marquee Ribbon Animation */
+@keyframes footer-scroll-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-footer-scroll-marquee {
+  animation: footer-scroll-marquee 35s linear infinite;
+  will-change: transform;
+}
