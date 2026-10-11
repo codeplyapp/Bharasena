@@ -26,7 +26,7 @@ export function DayTabs({
   return (
     <div
       className={cn(
-        "flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-charcoal-850/80 border border-stone-800 backdrop-blur-sm max-w-xl mx-auto",
+        "flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-charcoal-850/80 border border-stone-800 backdrop-blur-sm max-w-2xl mx-auto",
         className
       )}
       role="tablist"
@@ -44,9 +44,9 @@ export function DayTabs({
             tabIndex={isActive ? 0 : -1}
             onClick={() => onSelectDay(day)}
             className={cn(
-              "flex-1 min-w-[120px] flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400",
+              "flex-1 min-w-[130px] flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400",
               isActive
-                ? "bg-crimson-600 text-white shadow-lg shadow-crimson-600/30 scale-[1.02]"
+                ? "bg-gradient-to-r from-crimson-600 to-crimson-700 text-white shadow-lg shadow-crimson-600/30 scale-[1.02] border border-crimson-500/30"
                 : "text-stone-400 hover:text-stone-200 hover:bg-charcoal-800/60"
             )}
           >
