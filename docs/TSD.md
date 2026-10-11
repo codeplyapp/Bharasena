@@ -60,12 +60,15 @@ graph TD
     ROOT --> DOCKER[docker-compose.yml]
     ROOT --> ENV[.env.example]
     ROOT --> DOCKERFILE[Dockerfile]
+    ROOT --> MIDDLEWARE[middleware.ts]
 
     SRC --> APP[app/]
     SRC --> LIB[lib/]
     SRC --> COMP[components/]
 
     APP --> PAGE["page.tsx (/)"]
+    APP --> GLOBALS["globals.css (Tailwind v4 @theme)"]
+    APP --> LAYOUT["layout.tsx"]
     APP --> ADMIN["admin/"]
     APP --> API["api/"]
 
@@ -77,6 +80,11 @@ graph TD
 
     LIB --> LIBPRISMA["prisma.ts"]
     LIB --> LIBMODE["mode.ts"]
+    LIB --> LIBDATA["data.ts"]
+    LIB --> LIBTYPES["types.ts"]
+    LIB --> LIBMOCK["mock/data.ts"]
+    LIB --> LIBSECT["sections.ts"]
+    LIB --> LIBIMG["images.ts"]
     LIB --> LIBCLOUD["cloudinary.ts"]
     LIB --> LIBAUTH["auth.ts"]
 
@@ -84,6 +92,8 @@ graph TD
     COMP --> COMPHERO["Hero.tsx"]
     COMP --> COMPSECT["sections/"]
     COMP --> COMPADMIN["admin/"]
+    COMP --> COMPUI["ui/ (shadcn)"]
+    COMP --> COMPFOOT["Footer.tsx"]
 
     PRISMA --> SCHEMA["schema.prisma"]
     PRISMA --> SEED["seed.ts"]
